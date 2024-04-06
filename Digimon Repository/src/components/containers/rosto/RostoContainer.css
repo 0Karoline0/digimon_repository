@@ -1,0 +1,82 @@
+.estrutura{
+    height: 320px;
+    padding: 15px;
+    width: 170px;
+    border-radius: 10px;
+    border-color: var(--color-laranja1);
+    border-width: 4px;
+    border-style: double;
+    flex-direction: column;
+    margin: 10px 20px;
+    background-color: var(--color-branco-50);
+    cursor: auto;
+}
+
+.container_img{
+    height: 50%;
+    width: 170px;
+    overflow: hidden;
+}
+
+.estrutura:hover .img_rosto_container{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.img_rosto_container{
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+
+.container_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 110px;
+}
+
+.nome_rosto_container{
+    background-color: var(--color-branco-50);
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.estrutura:hover{
+    background-color: var(--color-azul2);
+    border-color: var(--color-laranja2);
+    border-width: 10;
+    color: var(--color-branco);
+
+}
+
+.estrutura:hover .btn_rosto_container{
+    border-color: var(--color-branco);
+    border-style: double;
+    border-width: 1px;
+    border-width: 1;
+    color: var(--color-branco);
+}
+
+.btn_rosto_container{
+    margin: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    background-color: transparent;
+    border-style: double;
+    border-color: var(--color-laranja2);
+}
+
+.btn_rosto_container:hover{
+    background-color: var(--color-branco-50);
+}
