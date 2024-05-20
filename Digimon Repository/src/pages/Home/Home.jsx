@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import { Header } from '../../components/Header/Header'
+import { DescubraContainer } from '../../components/containers/descubra/DescubraContainer'
 import { RostoContainer } from '../../components/containers/rosto/RostoContainer'
 import '../Home/Home.css'
+import { DescubraInfoContainer } from '../../components/containers/descubra/DescubraInfoContainer'
 
 export function Home() {
+
+    const [indexDescubra, setIndexDescubra] = useState(0);
+
+
+    function hyperlink(url) {
+        window.open(url, '_blank').focus();
+    }
 
     return (
         <div>
@@ -11,45 +21,20 @@ export function Home() {
                 <div className='apresentacao1'>
                     <div className='container_background'>
                         <img className='img_background' src="/src/assets/inicio_background.jpg" />
+                        <img className='img_background_celular' src="/src/assets/inicio_background_celular.jpg" />
                     </div>
                     <div className='texto_apresentacao'>
-                        <div className='container_opacidade'> 
+                        <div className='container_opacidade'>
                             <h2>Digimon Repository</h2>
                             <br />
-                            <span>Bem-vindo ao Digimon Repository! Um site feito por fãs para fãs</span>
+                            <span>Bem-vindo ao Digimon Repository! Um site feito por fãs para fãs.</span>
                             <br />
-                            <span>Aqui, oferecemos o que há de melhor no Digimon. Explore nosso repositório digital e descubra uma riqueza de informações sobre essas criaturas digitais fascinantes. Seja você um novato curioso ou um mestre veterano, encontrará aqui uma coleção meticulosamente organizada de dados e curiosidades sobre os Digimons.</span>
+                            <br />
+                            <span> Aqui, oferecemos o que há de melhor no Digimon. Explore nosso repositório digital e descubra uma riqueza de informações sobre essas criaturas digitais fascinantes.</span>
                             <br />
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <div className='curva_imagem'>
                     <div className="curva1">
                         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -59,20 +44,19 @@ export function Home() {
                 </div>
                 <section className='section1'>
                     <div className='recursos_apresentacao'>
-                        <div className='recursos_text'>
-                            <h1 className='descubra'>Descubra</h1>
-                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde amet doloribus et recusandae molestias iusto eligendi illo fuga alias ullam, necessitatibus consequuntur quam labore in eius accusantium eveniet modi officia.</span>
+                        <h3 style={{ marginBottom: "25px" }}>Descubra</h3>
+                        <div className='descubra-home'>
+                            <DescubraContainer onClick={() => setIndexDescubra(0)} isSelecionado={indexDescubra === 0 ? true : false} titulo={"Data"} imgSombra={"/src/assets/data_preto.png"} imgDestaque={"/src/assets/data.png"} />
+                            <DescubraContainer onClick={() => setIndexDescubra(1)} isSelecionado={indexDescubra === 1 ? true : false} titulo={"Vacina"} imgSombra={"/src/assets/vacina_preto.png"} imgDestaque={"/src/assets/vacina.png"} />
+                            <DescubraContainer onClick={() => setIndexDescubra(2)} isSelecionado={indexDescubra === 2 ? true : false} titulo={"Vírus"} imgSombra={"/src/assets/virus_preto.png"} imgDestaque={"/src/assets/virus.png"} />
                         </div>
-                        <img className='img_agumon' src="src/assets/agumon.png" />
+                        <div style={{ backgroundColor: "var(--color-azul2)" }}>
+                            <DescubraInfoContainer isVisible={indexDescubra === 0 ? false : true} img={"/src/assets/data_digimons_home.jpg"} descricao={'Sua origem está relacionada ao tráfego de informações pela rede. Em geral são pacíficos se não provocados. São fortes contra o tipo Vacina mas são muito fracos quando comparados ao tipo Vírus.'} />
+                            <DescubraInfoContainer isVisible={indexDescubra === 1 ? false : true} img={'/src/assets/vacina_digimons_home.jpg'} descricao={'Possuem forte instinto de ataque contra Espécies de Vírus, agindo contra esses atributos para proteger o ambiente ao redor e seu próprio território. Em geral, os Digimons Vacina são normalmente bons, dão grande importância à justiça e à moral, e lutam contra o mal.'} />
+                            <DescubraInfoContainer isVisible={indexDescubra === 2 ? false : true} img={'/src/assets/virus_digimons_home.jpg'} descricao={'Digimons que devoram dados. Procuram modificar o ambiente ao redor de acordo com seus desejos. Como resultado, anomalias acabam aparecendo no sistema. Os Digimons Vírus desejam poder e frequentemente podem se tornar gananciosos, egoístas, selvagens ou malignos na busca por isso.'} />
+                        </div>
                     </div>
                 </section>
-                <div className='curva_imagem2'>
-                    <div className="curva2">
-                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="shape-fill"></path>
-                        </svg>
-                    </div>
-                </div>
                 <section className='section2'>
                     <h2>Hall da fama</h2>
                     <div className='maisFamosos'>
@@ -107,22 +91,19 @@ export function Home() {
                             </div>
                         </div>
                     </div>
-
                     <div className='footer_links'>
-                        <div className='icon_circle'>
+                        <div className='icon_circle' onClick={() => hyperlink('https://github.com/0Karoline0')}>
                             <img className='footer_icons' src="/src/assets/github.png" />
                         </div>
-                        <div className='icon_circle'>
+                        <div className='icon_circle' onClick={() => hyperlink('https://www.youtube.com/channel/UCbXadpZ5OB-j7i6UYzeCJdA')}>
                             <img className='footer_icons' src="/src/assets/youtube.png" />
                         </div>
-                        <div className='icon_circle'>
+                        <div className='icon_circle' onClick={() => hyperlink('https://www.linkedin.com/in/karolinevitoriam/')}>
                             <img className='footer_icons' src="/src/assets/linkedin.png" />
                         </div>
                     </div>
-
                 </footer>
             </body>
         </div>
     )
-
 }

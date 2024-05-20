@@ -1,0 +1,51 @@
+.descubra-container-selecao{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-azul2);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 170px;
+    position: relative;
+    cursor: pointer;
+}
+
+.descubra-container-selecao-selecionado{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-azul2);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 170px;
+    position: relative;
+    cursor: pointer;
+    background-image: url('/src/assets/vacina_background.jpg');
+    background-size: cover;
+    box-shadow: 0 0 10px var(--color-atributos);
+}
+
+.descubra-img, .descubra-img-destaque{
+    width: 80px;
+    padding-bottom: 10px;
+}
+
+/* .descubra-img-destaque{
+    display: none;
+} */
+
+/* .descubra-container-selecao:hover .descubra-img{
+    display: none;
+} */
+/* 
+.descubra-container-selecao:hover .descubra-img-destaque{
+    display: block;
+} */
+
+/* .descubra-container-selecao:hover .descubra-container-titulo{
+    color: var(--color-preto); */
+/* } */

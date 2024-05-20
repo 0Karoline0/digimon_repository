@@ -40,6 +40,7 @@ section{
 .container_opacidade{
     background-color: var(--color-branco-50);
     padding: 15px 25px;
+    text-align: center;
 }
 
 .container_background{
@@ -48,11 +49,25 @@ section{
     height: 100%;
 }
 
-.img_background{
+.img_background, .img_background_celular{
     width: 100%;
     filter: blur(2px) grayscale(0.4);
     transform: translateY(-29%);
     z-index: -1;
+
+    -webkit-filter: blur(2px) grayscale(0.4);
+    -webkit-transform: translateY(-29%);
+    -moz-transform: translateY(-29%);
+    -ms-transform: translateY(-29%);
+    -o-transform: translateY(-29%);
+}
+
+.img_background_celular{
+    transform: translateY(-10%);
+    -webkit-transform: translateY(-10%);
+    -moz-transform: translateY(-10%);
+    -ms-transform: translateY(-10%);
+    -o-transform: translateY(-10%);
     -webkit-filter: blur(2px) grayscale(0.4);
 }
 
@@ -80,7 +95,14 @@ section{
     .texto_apresentacao{
         width: 90%;
     }
-    
+}
+
+@media screen and (max-width: 700px){
+
+    .img_background{
+        display: none;
+    }
+
 }
 
 
@@ -163,31 +185,24 @@ h2{
 
 .recursos_apresentacao{
     display: flex;
-    position: relative;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 90px;
-}
-
-.img_agumon{
-    width: 40%;
-    padding: 0;
-    height: auto;
-}
-
-.recursos_text{
-    width: 50%;
-    text-align: center;
-    padding-left: 35px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 40px;
 }
 
-.descubra{
-    margin-bottom: 25px;
+.descubra-home{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
 }
+
+
+
+
+
+
 
 /* ------ HALL DA FAMA --------*/
 .curva_imagem2{
@@ -222,6 +237,7 @@ h2{
     text-align: center;
     justify-content: start;
     flex-direction: column;
+    padding-top: 30px;
 }
 
 .maisFamosos{
